@@ -9,10 +9,13 @@ do {
   gallons = parseFloat(prompt("Enter the gallon capacity of your vehicle"));
   if (!isNaN(miles) && miles > 0 && !isNaN(gallons) && gallons > 0) {
     mpg = miles / gallons;
-    console.log(`Your car gets ${mpg} miles per gallon.`);
+    console.log(`Your car gets ${mpg.toFixed(2)} miles per gallon.`);
   } else {
     alert("One or both of your entries are invalid.");
   }
   again = prompt("Do you want to run again? (y/n)");
+  while (again !== "y" && again !== "n") {
+    again = prompt("Please enter either (y/n)");
+  }
 } while (again === "y");
 console.log("Application had ended.");
